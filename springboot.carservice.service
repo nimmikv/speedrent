@@ -1,0 +1,15 @@
+packet com.my.springboot.carservice.service;
+
+import org.springframework.stereotype.component;
+import com.my.springboot.CarService.model.car;
+@component
+public class Carservice {
+private statics Car mycar=new Car();
+Static{
+	mycar.setname("Swift");
+	mycar.setmanufacturer("maruti suzuki");
+}
+public car hello(){
+	return mycar;
+}
+}
