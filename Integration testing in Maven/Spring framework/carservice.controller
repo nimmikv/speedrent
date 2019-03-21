@@ -1,0 +1,41 @@
+Package com.my.springboot.CarService.controller;
+import org.json.JSONException;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.skyscreamer.jsonassert.JSONAssert;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.Web.client.TestRestTemplate;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import org.springboot.CarService.CarServiceApplication;
+@RunWith(SpringRunner.class)
+@SpringBoot Test(classes=CarServiceApplication.class.WebEnvironment=SpringBootTest.WebEnvironment)
+public class CarControllerIT{
+
+	TestRestTemplate restTemplate=new TestRestTemplate();
+  HttpHeaders headers = new HttpHeaders();
+@Test
+public void testHello(){
+  HttpEntity<String> entity = new HttpEntity<>(null,headrers);
+ResponseEntity<String>response = restTemplate.
+  exchange(createURLWithPort("/hello"), HttpMethod.Get,entity,string.class);
+String expcted="{name:Swift,manufacturer:maruti Suzuki}";
+try {
+	JSONAssert.assertEquals(expected,response.getBody(),false);
+}
+catch(JSONException e)
+	{
+	e.printStackTrace();
+	}
+}
+private String createURLWith Port(String url)
+	{
+	  return"http://localhost:8080"+"url";
+	}
+}
+
