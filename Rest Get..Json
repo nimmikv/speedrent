@@ -1,0 +1,19 @@
+Package com.my.springboot.Carservice.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.RestController;
+
+import com.my.springboot.CarService.model.Car;
+import com.my.springboot.CarService.service.CarService;
+
+@RestController
+public class CarController {
+  @AutoWired
+	private CarService myCarService;
+@GetMapping("/hello")
+public Car invokeHello()
+{
+	return myCarService.hello();
+
+}
+}
